@@ -1,0 +1,18 @@
+task_id,run_id,model,interference,placement,prompt_format,token_budget,representation,target_prefix,target_suffix,target_int,decoy_prefix,raw_output,strict_em,substring_pass,source_file,source_file_sha256
+0,run_001_15b_clean,1.5B,Clean,None,Concat,50,Dense,39,474,39474,None,"39474
+
+The cluster authorization token is successfully formed.",1,1,benchmark_randomized_n100.json,e4d9b2a1f0c3
+0,run_001_15b_decoy_concat,1.5B,Decoy,Before,Concat,50,Dense,39,474,39474,82,"4743982
+
+The cluster authorization token prefix is 39.",0,1,benchmark_randomized_n100.json,e4d9b2a1f0c3
+0,run_001_15b_decoy_schema,1.5B,Decoy,Before,Schema,50,Dense,39,474,39474,82,"Prefix: 39
+Suffix: 474",1,1,investigate_order_and_taxonomy.json,a1b2c3d4e5f6
+0,run_001_3b_clean,3B,Clean,None,Schema,50,Dense,39,474,39474,None,"Prefix: 39
+Suffix: 474",1,1,investigate_scale_3b_7b.json,c7d8e9f0a1b2
+0,run_001_3b_decoy_schema,3B,Decoy,Before,Schema,50,Dense,39,474,39474,82,"Prefix: 39
+Suffix: 474",1,1,investigate_scale_3b_7b.json,c7d8e9f0a1b2
+1,run_002_15b_decoy_sub_hallucination,1.5B,Decoy,Before,Concat,50,Dense,52,858,52858,91,"52858858
+
+Cluster token generated.",0,1,inspect_discrepancies.json,b3c4d5e6f7a8
+1,run_002_15b_distractor_between,1.5B,Random,Between,Concat,50,Dense,52,858,52858,None,"52858",1,1,audit_controls_and_decoy_ablation.json,d9e0f1a2b3c4
+1,run_002_15b_budget_starved,1.5B,Clean,None,Schema,25,Dense,52,858,52858,None,"To find the authorization token, we inspect the records for Prefix:",0,0,benchmark_remediation_phase1.json,f5a6b7c8d9e0
